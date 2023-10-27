@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{margin: 16, borderWidth: 2, borderColor: 'red', padding: 16}}>Hello World!</Text>
+      <Text style={styles.playText}>Hello World!</Text>
       <Button
         title="Tap Me!"
         color="#841584"
@@ -23,4 +23,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  playText: {
+    margin: 16,
+    borderWidth: 2,
+    borderColor: 'red',
+    padding: 16,
+  }
 });
