@@ -1,17 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.playText}>Hello World!</Text>
+      <TextInput placeholder='Your Course Goal' />
       <Button
-        title="Tap Me!"
-        color="#841584"
-        onPress={()=>{}}
-        accessibilityLabel="Learn more about this purple button"
+        title='Tap Me!'
+        color='#841584'
+        onPress={() => {}}
+        accessibilityLabel='Learn more about this purple button'
       />
-      <StatusBar style="auto" />
+      <StatusBar style='auto' />
     </View>
   );
 }
@@ -28,5 +29,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'red',
     padding: 16,
-  }
+  },
 });
+
