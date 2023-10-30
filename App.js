@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import {
-  Button,
   StyleSheet,
-  TextInput,
   View,
 } from 'react-native';
 
+import GoalInputs from './GoalInputs';
 import GoalList from './GoalList';
 
 export default function App() {
@@ -25,30 +24,13 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder='Your Course Goal'
-          onChangeText={addInputGoalHandler}
-        />
-        <Button
-          title='Add Goal'
-          color='#841584'
-          onPress={addGoalHandler}
-          accessibilityLabel='Learn more about this purple button'
-        />
-      </View>
+      <GoalInputs addInputGoalHandler={addInputGoalHandler} addGoalHandler={addGoalHandler} />
       <GoalList goalList={goalList}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  appContainer: {
-    paddingTop: 50,
-    paddingHorizontal: 16,
-    flex: 1,
-  },
   inputContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -58,13 +40,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#cccccc',
     marginBottom: 10,
-  },
-  textInput: {
-    borderWidth: 1,
-    borderColor: '#cccccc',
-    width: '70%',
-    marginRight: 8,
-    padding: 8,
   },
 });
 
