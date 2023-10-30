@@ -4,8 +4,8 @@ import {
   View,
 } from 'react-native';
 
-import GoalInputs from './GoalInputs';
-import GoalList from './GoalList';
+import GoalInputs from './src/GoalInputs';
+import GoalList from './src/GoalList';
 
 export default function App() {
   const [inputGoal, setInputGoal] = useState('');
