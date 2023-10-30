@@ -2,11 +2,11 @@ import { useState } from 'react';
 import {
   Button,
   StyleSheet,
-  Text,
   TextInput,
   View,
-  FlatList,
 } from 'react-native';
+
+import GoalList from './GoalList';
 
 export default function App() {
   const [inputGoal, setInputGoal] = useState('');
@@ -38,18 +38,7 @@ export default function App() {
           accessibilityLabel='Learn more about this purple button'
         />
       </View>
-      <View style={styles.goalsConatiner}>
-        <FlatList
-          data={goalList}
-          renderItem={(itemData) => (
-            <View style={styles.goalItem}>
-              <Text style={styles.goalText}>{itemData.item.text}</Text>
-            </View>
-          )}
-          // you can also have a key attribute to simplify the process of key extraction
-          keyExtractor={(item, index) => item.id}
-        />
-      </View>
+      <GoalList goalList={goalList}/>
     </View>
   );
 }
