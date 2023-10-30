@@ -66,18 +66,5 @@ const styles = StyleSheet.create({
     marginRight: 8,
     padding: 8,
   },
-  goalsConatiner: {
-    flex: 5,
-    paddingTop: 50,
-  },
-  goalItem: {
-    backgroundColor: '#5e0acc',
-    margin: 8,
-    padding: 12,
-    borderRadius: 6,
-  },
-  goalText: {
-    color: '#fff',
-  },
 });
 
