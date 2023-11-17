@@ -6,11 +6,15 @@ const GoalList = ({ goalList, deleteButtonHandler }) => {
       <FlatList
         data={goalList}
         renderItem={(itemData) => (
-          <Pressable onPress={() => deleteButtonHandler(itemData.item.id)}>
-            <View style={styles.goalItem}>
+          <View style={styles.goalItem}>
+            <Pressable
+              onPress={() => deleteButtonHandler(itemData.item.id)}
+              android_ripple={{ color: '#210644' }}
+              style={({ pressed }) => pressed && styles.pressedItem}
+            >
               <Text style={styles.goalText}>{itemData.item.text}</Text>
-            </View>
-          </Pressable>
+            </Pressable>
+          </View>
         )}
         // you can also have a key attribute to simplify the process of key extraction
         keyExtractor={(item) => item.id}
@@ -27,11 +31,14 @@ const styles = StyleSheet.create({
   goalItem: {
     backgroundColor: '#5e0acc',
     margin: 8,
-    padding: 12,
     borderRadius: 6,
   },
   goalText: {
+    padding: 12,
     color: '#fff',
+  },
+  pressedItem: {
+    opacity: 0.7,
   },
 });
 
