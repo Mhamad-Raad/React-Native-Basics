@@ -1,27 +1,23 @@
-import {
-  Button,
-  StyleSheet,
-  TextInput,
-  View,
-} from 'react-native';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
 
-const GoalInputs = ({addInputGoalHandler, addGoalHandler}) => {
+const GoalInputs = ({ inputGoal, addInputGoalHandler, addGoalHandler }) => {
   return (
     <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder='Your Course Goal'
-          onChangeText={addInputGoalHandler}
-        />
-        <Button
-          title='Add Goal'
-          color='#841584'
-          onPress={addGoalHandler}
-          accessibilityLabel='Learn more about this purple button'
-        />
-      </View>
-  )
-}
+      <TextInput
+        style={styles.textInput}
+        placeholder='Your Course Goal'
+        onChangeText={addInputGoalHandler}
+        value={inputGoal}
+      />
+      <Button
+        title='Add Goal'
+        color='#841584'
+        onPress={addGoalHandler}
+        accessibilityLabel='Learn more about this purple button'
+      />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   inputContainer: {

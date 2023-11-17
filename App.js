@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 import GoalInputs from './src/GoalInputs';
 import GoalList from './src/GoalList';
@@ -20,6 +17,7 @@ export default function App() {
       ...currentGoalList,
       { text: inputGoal, id: Math.random().toString() },
     ]);
+    setInputGoal('');
   };
 
   const deleteButtonHandler = (id) => {
@@ -31,6 +29,7 @@ export default function App() {
   return (
     <View style={styles.appContainer}>
       <GoalInputs
+        inputGoal={inputGoal}
         addInputGoalHandler={addInputGoalHandler}
         addGoalHandler={addGoalHandler}
       />
@@ -46,5 +45,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-
 
