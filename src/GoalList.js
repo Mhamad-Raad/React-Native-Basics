@@ -1,26 +1,23 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  FlatList,
-} from 'react-native';
+import { StyleSheet, Text, View, FlatList, Pressable } from 'react-native';
 
-const GoalList = ({goalList}) => {
+const GoalList = ({ goalList, deleteButtonHandler }) => {
   return (
     <View style={styles.goalsConatiner}>
-        <FlatList
-          data={goalList}
-          renderItem={(itemData) => (
+      <FlatList
+        data={goalList}
+        renderItem={(itemData) => (
+          <Pressable onPress={() => deleteButtonHandler(itemData.item.id)}>
             <View style={styles.goalItem}>
               <Text style={styles.goalText}>{itemData.item.text}</Text>
             </View>
-          )}
-          // you can also have a key attribute to simplify the process of key extraction
-          keyExtractor={(item) => item.id}
-        />
-      </View>
-  )
-}
+          </Pressable>
+        )}
+        // you can also have a key attribute to simplify the process of key extraction
+        keyExtractor={(item) => item.id}
+      />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   goalsConatiner: {

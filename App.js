@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import {
-  Button,
   StyleSheet,
-  Text,
-  TextInput,
   View,
-  FlatList,
 } from 'react-native';
 
 import GoalInputs from './src/GoalInputs';
@@ -26,13 +22,19 @@ export default function App() {
     ]);
   };
 
+  const deleteButtonHandler = (id) => {
+    setGoalList((currenGoalList) => {
+      return currenGoalList.filter((item) => item.id !== id);
+    });
+  };
+
   return (
     <View style={styles.appContainer}>
       <GoalInputs
         addInputGoalHandler={addInputGoalHandler}
         addGoalHandler={addGoalHandler}
       />
-      <GoalList goalList={goalList} />
+      <GoalList goalList={goalList} deleteButtonHandler={deleteButtonHandler} />
     </View>
   );
 }
@@ -44,4 +46,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
 
