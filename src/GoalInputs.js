@@ -17,7 +17,10 @@ const GoalInputs = ({
   return (
     <Modal visible={visible} animationType='slide'>
       <View style={styles.inputContainer}>
-        <Image source={require('../assets/images/meme.jpg')} />
+        <Image
+          source={require('../assets/images/meme.jpg')}
+          style={styles.imageStyle}
+        />
         <TextInput
           style={styles.textInput}
           placeholder='Your Course Goal'
@@ -71,6 +74,9 @@ const styles = StyleSheet.create({
     width: 100,
     marginTop: 50,
     marginHorizontal: 8,
+  },
+  imageStyle: {
+    marginBottom: 25,
   },
 });
 
