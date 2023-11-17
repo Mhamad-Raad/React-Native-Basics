@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   goalsConatiner: {
     flex: 5,
     paddingTop: 50,
+    width: '100%',
   },
   goalItem: {
     backgroundColor: '#5e0acc',
