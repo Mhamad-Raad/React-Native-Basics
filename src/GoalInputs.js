@@ -1,4 +1,4 @@
-import { Button, Modal, StyleSheet, TextInput, View } from 'react-native';
+import { Button, Modal, StyleSheet, TextInput, View, Image } from 'react-native';
 
 const GoalInputs = ({
   inputGoal,
