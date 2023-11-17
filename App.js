@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, View, StatusBar } from 'react-native';
 
 import GoalInputs from './src/GoalInputs';
 import GoalList from './src/GoalList';
@@ -33,21 +33,34 @@ export default function App() {
   };
 
   return (
-    <View style={styles.appContainer}>
-      <Button
-        title='Add New Goal'
-        color='#5e0acc'
-        onPress={toggleVisibleHandler}
-      />
-      <GoalInputs
-        inputGoal={inputGoal}
-        addInputGoalHandler={addInputGoalHandler}
-        addGoalHandler={addGoalHandler}
-        visible={visible}
-        toggleVisibleHandler={toggleVisibleHandler}
-      />
-      <GoalList goalList={goalList} deleteButtonHandler={deleteButtonHandler} />
-    </View>
+    <>
+      <StatusBar style='light' />
+      <View style={styles.appContainer}>
+        <View
+          style={{
+            width: '100%',
+            height: '100%',
+          }}
+        >
+          <Button
+            title='Add New Goal'
+            color='#a065ec'
+            onPress={toggleVisibleHandler}
+          />
+        </View>
+        <GoalInputs
+          inputGoal={inputGoal}
+          addInputGoalHandler={addInputGoalHandler}
+          addGoalHandler={addGoalHandler}
+          visible={visible}
+          toggleVisibleHandler={toggleVisibleHandler}
+        />
+        <GoalList
+          goalList={goalList}
+          deleteButtonHandler={deleteButtonHandler}
+        />
+      </View>
+    </>
   );
 }
 

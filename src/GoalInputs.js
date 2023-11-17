@@ -31,7 +31,7 @@ const GoalInputs = ({
           <View style={styles.buttonStyle}>
             <Button
               title='Add Goal'
-              color='#841584'
+              color='#5e0acc'
               onPress={addGoalHandler}
               accessibilityLabel='Learn more about this purple button'
             />
@@ -39,7 +39,7 @@ const GoalInputs = ({
           <View style={styles.buttonStyle}>
             <Button
               title='Cancel'
-              color='#841584'
+              color='#f31282'
               onPress={toggleVisibleHandler}
             />
           </View>
@@ -56,15 +56,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 24,
-    borderBottomWidth: 1,
-    borderBottomColor: '#cccccc',
     marginBottom: 10,
+    backgroundColor: '#311b6b',
   },
   textInput: {
     borderWidth: 1,
-    borderColor: '#cccccc',
+    borderColor: '#e4d0ff',
+    backgroundColor: '#e4d0ff',
+    color: '#120438',
     width: '100%',
-    padding: 8,
+    borderRadius: 6,
+    padding: 12,
   },
   buttonContainer: {
     flexDirection: 'row',
