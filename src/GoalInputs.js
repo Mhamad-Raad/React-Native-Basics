@@ -1,4 +1,11 @@
-import { Button, Modal, StyleSheet, TextInput, View, Image } from 'react-native';
+import {
+  Button,
+  Modal,
+  StyleSheet,
+  TextInput,
+  View,
+  Image,
+} from 'react-native';
 
 const GoalInputs = ({
   inputGoal,
@@ -10,6 +17,7 @@ const GoalInputs = ({
   return (
     <Modal visible={visible} animationType='slide'>
       <View style={styles.inputContainer}>
+        <Image source={require('../assets/images/meme.jpg')} />
         <TextInput
           style={styles.textInput}
           placeholder='Your Course Goal'
