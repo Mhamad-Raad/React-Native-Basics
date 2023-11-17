@@ -8,6 +8,9 @@ import {
   FlatList,
 } from 'react-native';
 
+import GoalInputs from './src/GoalInputs';
+import GoalList from './src/GoalList';
+
 export default function App() {
   const [inputGoal, setInputGoal] = useState('');
   const [goalList, setGoalList] = useState([]);
@@ -25,31 +28,11 @@ export default function App() {
 
   return (
     <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.textInput}
-          placeholder='Your Course Goal'
-          onChangeText={addInputGoalHandler}
-        />
-        <Button
-          title='Add Goal'
-          color='#841584'
-          onPress={addGoalHandler}
-          accessibilityLabel='Learn more about this purple button'
-        />
-      </View>
-      <View style={styles.goalsConatiner}>
-        <FlatList
-          data={goalList}
-          renderItem={(itemData) => (
-            <View style={styles.goalItem}>
-              <Text style={styles.goalText}>{itemData.item.text}</Text>
-            </View>
-          )}
-          // you can also have a key attribute to simplify the process of key extraction
-          keyExtractor={(item, index) => item.id}
-        />
-      </View>
+      <GoalInputs
+        addInputGoalHandler={addInputGoalHandler}
+        addGoalHandler={addGoalHandler}
+      />
+      <GoalList goalList={goalList} />
     </View>
   );
 }
